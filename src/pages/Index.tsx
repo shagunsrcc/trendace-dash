@@ -10,75 +10,75 @@ import heroImage from "@/assets/hero-competitions.jpg";
 const mockCompetitions = [
   {
     id: "1",
-    title: "Global Business Case Challenge 2024",
-    organizer: "McKinsey & Company",
+    title: "Global Business Strategy Challenge 2024",
+    organizingCollege: "IIM Ahmedabad",
     category: "Strategy",
-    prize: "₹5,00,000",
-    deadline: "March 15, 2024",
+    prizePool: "₹5,00,000",
+    registrationDeadline: "March 15, 2024",
+    eligibility: "Open to UG/PG students from all premier institutions including IITs, IIMs, BITS, NITs, and DU colleges",
     participants: 12500,
     colleges: ["IIM-A", "IIM-B", "IIT-D", "BITS"],
-    isHot: true,
-    description: "Solve real-world business challenges faced by Fortune 500 companies. Test your strategic thinking and analytical skills."
+    isHot: true
   },
   {
     id: "2", 
-    title: "Fintech Innovation Summit",
-    organizer: "Goldman Sachs",
+    title: "Fintech Innovation Case Competition",
+    organizingCollege: "IIT Delhi",
     category: "Finance",
-    prize: "₹3,00,000",
-    deadline: "March 20, 2024",
+    prizePool: "₹3,00,000",
+    registrationDeadline: "March 20, 2024",
+    eligibility: "UG students from engineering and management backgrounds. Teams of 3-4 members allowed",
     participants: 8900,
     colleges: ["IIM-C", "XLRI", "ISB", "DU"],
-    isHot: true,
-    description: "Design the next breakthrough fintech solution. Focus on digital payments, blockchain, and financial inclusion."
+    isHot: true
   },
   {
     id: "3",
-    title: "Sustainable Energy Challenge",
-    organizer: "Shell",
+    title: "Sustainable Energy Solutions Challenge",
+    organizingCollege: "IIT Bombay",
     category: "Energy",
-    prize: "₹4,00,000",
-    deadline: "March 25, 2024", 
+    prizePool: "₹4,00,000",
+    registrationDeadline: "March 25, 2024",
+    eligibility: "Open to all UG and PG students from technical institutes. Focus on renewable energy solutions",
     participants: 6700,
     colleges: ["IIT-B", "IIT-M", "NIT-T", "BITS"],
-    isHot: false,
-    description: "Develop innovative solutions for renewable energy adoption and carbon footprint reduction in emerging markets."
+    isHot: false
   },
   {
     id: "4",
     title: "Digital Transformation Case Study",
-    organizer: "Accenture",
+    organizingCollege: "IIM Bangalore",
     category: "Technology",
-    prize: "₹2,50,000",
-    deadline: "March 30, 2024",
+    prizePool: "₹2,50,000",
+    registrationDeadline: "March 30, 2024",
+    eligibility: "MBA/PGDM students and final year UG students from premier institutions across India",
     participants: 15200,
     colleges: ["IIT-KGP", "IIM-L", "BITS", "NIT-K"],
-    isHot: true,
-    description: "Help traditional businesses embrace digital technologies. Focus on AI, IoT, and cloud transformation strategies."
+    isHot: true
   },
   {
     id: "5",
-    title: "Healthcare Innovation Lab",
-    organizer: "Pfizer",
+    title: "Healthcare Innovation Challenge",
+    organizingCollege: "BITS Pilani",
     category: "Healthcare",
-    prize: "₹3,50,000",
-    deadline: "April 5, 2024",
+    prizePool: "₹3,50,000",
+    registrationDeadline: "April 5, 2024",
+    eligibility: "Medical, engineering, and management students. Must have valid college ID from recognized institutions",
     participants: 5400,
     colleges: ["AIIMS", "CMC", "IIT-D", "IIM-A"],
-    isHot: false,
-    description: "Address critical healthcare challenges in rural India. Develop scalable solutions for better healthcare access."
+    isHot: false
   },
   {
     id: "6",
-    title: "Smart City Planning Challenge",
-    organizer: "Deloitte",
+    title: "Smart City Planning Competition",
+    organizingCollege: "NIT Trichy",
     category: "Urban Planning",
-    prize: "₹2,00,000", 
-    deadline: "April 10, 2024",
+    prizePool: "₹2,00,000", 
+    registrationDeadline: "April 10, 2024",
+    eligibility: "Architecture, civil engineering, and urban planning students from NITs, IITs, and other technical institutes",
     participants: 7800,
     colleges: ["IIT-R", "SPA", "NIT-S", "BIT"],
-    isHot: false,
-    description: "Design sustainable urban solutions for India's growing cities. Focus on transportation, housing, and infrastructure."
+    isHot: false
   }
 ];
 
@@ -120,7 +120,7 @@ const Index = () => {
 
   const filteredCompetitions = competitions.filter(comp => {
     const matchesSearch = comp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         comp.organizer.toLowerCase().includes(searchQuery.toLowerCase());
+                         comp.organizingCollege.toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesCategory = selectedCategories.includes("All") ||
                            selectedCategories.some(cat => 

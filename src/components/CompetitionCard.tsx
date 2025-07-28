@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Trophy, Users, ExternalLink } from "lucide-react";
@@ -6,14 +6,14 @@ import { Calendar, Trophy, Users, ExternalLink } from "lucide-react";
 interface Competition {
   id: string;
   title: string;
-  organizer: string;
+  organizingCollege: string;
   category: string;
-  prize: string;
-  deadline: string;
+  prizePool: string;
+  registrationDeadline: string;
+  eligibility: string;
   participants: number;
   colleges: string[];
   isHot: boolean;
-  description: string;
 }
 
 interface CompetitionCardProps {
@@ -26,12 +26,9 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
       <CardHeader className="relative">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <CardTitle className="text-xl font-bold text-foreground mb-2">
+            <CardTitle className="text-xl font-bold text-foreground mb-3">
               {competition.title}
             </CardTitle>
-            <CardDescription className="text-muted-foreground">
-              {competition.organizer}
-            </CardDescription>
           </div>
           {competition.isHot && (
             <Badge className="cta-accent text-xs font-semibold">
@@ -39,48 +36,68 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
             </Badge>
           )}
         </div>
-        
-        <div className="flex flex-wrap gap-2 mt-3">
-          {competition.colleges.slice(0, 3).map((college) => (
-            <Badge key={college} variant="secondary" className="college-tag text-xs">
-              {college}
-            </Badge>
-          ))}
-          {competition.colleges.length > 3 && (
-            <Badge variant="secondary" className="college-tag text-xs">
-              +{competition.colleges.length - 3} more
-            </Badge>
-          )}
-        </div>
       </CardHeader>
 
-      <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {competition.description}
-        </p>
+      <CardContent className="space-y-5">
+        {/* Organizing College */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">
+            Organizing College
+          </h4>
+          <p className="text-lg font-medium text-foreground">
+            {competition.organizingCollege}
+          </p>
+        </div>
 
-        <div className="grid grid-cols-2 gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <Trophy className="w-4 h-4 text-accent" />
-            <span className="text-foreground font-medium">{competition.prize}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-accent" />
-            <span className="text-foreground">{competition.participants.toLocaleString()} participants</span>
-          </div>
-          <div className="flex items-center gap-2 col-span-2">
-            <Calendar className="w-4 h-4 text-accent" />
-            <span className="text-foreground">Deadline: {competition.deadline}</span>
+        {/* Registration Deadline */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            Registration Deadline
+          </h4>
+          <p className="text-lg font-medium text-foreground">
+            {competition.registrationDeadline}
+          </p>
+        </div>
+
+        {/* Prize Pool */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
+            <Trophy className="w-4 h-4" />
+            Prize Pool
+          </h4>
+          <p className="text-lg font-medium text-foreground">
+            {competition.prizePool}
+          </p>
+        </div>
+
+        {/* Eligibility */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
+            <Users className="w-4 h-4" />
+            Eligibility
+          </h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {competition.eligibility}
+          </p>
+        </div>
+
+        {/* Participant Count */}
+        <div className="pt-2 border-t border-border/30">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Current Participants</span>
+            <span className="text-accent font-semibold">{competition.participants.toLocaleString()}</span>
           </div>
         </div>
 
+        {/* Action Buttons */}
         <div className="flex gap-3 pt-2">
           <Button className="cta-primary flex-1" size="sm">
-            View Details
+            Register Now
           </Button>
           <Button variant="outline" size="sm" className="flex items-center gap-2">
             <ExternalLink className="w-4 h-4" />
-            Apply
+            Details
           </Button>
         </div>
       </CardContent>
