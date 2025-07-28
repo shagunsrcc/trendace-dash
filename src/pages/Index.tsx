@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CompetitionCard } from "@/components/CompetitionCard";
 import { FilterBar } from "@/components/FilterBar";
-import { TrendingUp, Zap, Trophy, Users, Globe } from "lucide-react";
-import heroImage from "@/assets/hero-competitions.jpg";
+import { TrendingUp, Zap, Trophy, Users, Globe, Award, Clock, Target } from "lucide-react";
 
 // Mock data for competitions
 const mockCompetitions = [
@@ -177,13 +176,57 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative lg:block hidden">
-              <img 
-                src={heroImage} 
-                alt="Trending Competitions"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-2xl"></div>
+            <div className="space-y-8 relative">
+              {/* Live Trending Competitions Widget */}
+              <div className="glass-effect rounded-2xl p-6 border border-border/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="live-indicator">
+                    <TrendingUp className="w-5 h-5 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold">Top Trending Now</h3>
+                </div>
+                
+                <div className="space-y-3">
+                  {competitions.slice(0, 3).map((comp, index) => (
+                    <div key={comp.id} className="flex items-center justify-between p-3 rounded-lg bg-card/50 border border-border/10">
+                      <div className="flex items-center gap-3">
+                        <div className="text-accent font-bold text-lg">#{index + 1}</div>
+                        <div>
+                          <div className="font-medium text-sm">{comp.title.split(' ').slice(0, 3).join(' ')}</div>
+                          <div className="text-xs text-muted-foreground">{comp.organizingCollege}</div>
+                        </div>
+                      </div>
+                      <div className="text-accent font-semibold text-sm">
+                        {(comp.participants / 1000).toFixed(1)}K
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="glass-effect rounded-xl p-4 text-center">
+                  <Award className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-foreground">15+</div>
+                  <div className="text-sm text-muted-foreground">Categories</div>
+                </div>
+                <div className="glass-effect rounded-xl p-4 text-center">
+                  <Clock className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-foreground">24/7</div>
+                  <div className="text-sm text-muted-foreground">Live Updates</div>
+                </div>
+                <div className="glass-effect rounded-xl p-4 text-center">
+                  <Target className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-foreground">95%</div>
+                  <div className="text-sm text-muted-foreground">Success Rate</div>
+                </div>
+                <div className="glass-effect rounded-xl p-4 text-center">
+                  <Trophy className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-foreground">₹2Cr+</div>
+                  <div className="text-sm text-muted-foreground">Won by Students</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
