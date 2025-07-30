@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CompetitionCard } from "@/components/CompetitionCard";
 import { FilterBar } from "@/components/FilterBar";
-import { TrendingUp, Zap, Trophy, Users, Globe, Award, Clock, Target } from "lucide-react";
+import { TrendingUp, Zap, Trophy, Users, Globe } from "lucide-react";
 
 // Mock data for competitions
 const mockCompetitions = [
@@ -160,20 +160,6 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">50K+</div>
-                  <div className="text-sm text-muted-foreground">Active Participants</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">120+</div>
-                  <div className="text-sm text-muted-foreground">Colleges</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">₹50L+</div>
-                  <div className="text-sm text-muted-foreground">Total Prizes</div>
-                </div>
-              </div>
             </div>
 
             <div className="space-y-8 relative">
@@ -204,29 +190,6 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Quick Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="glass-effect rounded-xl p-4 text-center">
-                  <Award className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">15+</div>
-                  <div className="text-sm text-muted-foreground">Categories</div>
-                </div>
-                <div className="glass-effect rounded-xl p-4 text-center">
-                  <Clock className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">24/7</div>
-                  <div className="text-sm text-muted-foreground">Live Updates</div>
-                </div>
-                <div className="glass-effect rounded-xl p-4 text-center">
-                  <Target className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">95%</div>
-                  <div className="text-sm text-muted-foreground">Success Rate</div>
-                </div>
-                <div className="glass-effect rounded-xl p-4 text-center">
-                  <Trophy className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">₹2Cr+</div>
-                  <div className="text-sm text-muted-foreground">Won by Students</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
