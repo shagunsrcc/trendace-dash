@@ -9,75 +9,63 @@ import { TrendingUp, Zap, Trophy, Users, Globe } from "lucide-react";
 const mockCompetitions = [
   {
     id: "1",
-    title: "Global Business Strategy Challenge 2024",
-    organizingCollege: "IIM Ahmedabad",
+    title: "Case Competition – StratEdge'25",
+    competitionType: "Case Study Challenge",
+    organizingCollege: "Institute of Management Technology (IMT), Ghaziabad",
     category: "Strategy",
-    prizePool: "₹5,00,000",
-    registrationDeadline: "March 15, 2024",
-    eligibility: "Open to UG/PG students from all premier institutions including IITs, IIMs, BITS, NITs, and DU colleges",
-    participants: 12500,
-    colleges: ["IIM-A", "IIM-B", "IIT-D", "BITS"],
-    isHot: true
+    eligibility: "Open to all",
+    participants: 8500,
+    colleges: ["IMT", "IIM", "IIT", "BITS"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/9dzVWTl"
   },
   {
-    id: "2", 
-    title: "Fintech Innovation Case Competition",
-    organizingCollege: "IIT Delhi",
-    category: "Finance",
-    prizePool: "₹3,00,000",
-    registrationDeadline: "March 20, 2024",
-    eligibility: "UG students from engineering and management backgrounds. Teams of 3-4 members allowed",
-    participants: 8900,
-    colleges: ["IIM-C", "XLRI", "ISB", "DU"],
-    isHot: true
+    id: "2",
+    title: "AtomQuest 2025",
+    competitionType: "Innovation & Product Challenge",
+    organizingCollege: "Atomberg Technologies Pvt. Ltd.",
+    category: "Innovation",
+    eligibility: "Engineering Students, Postgraduates, Undergraduates",
+    participants: 6200,
+    colleges: ["IIT", "NIT", "BITS", "VIT"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/CoBpmE4"
   },
   {
     id: "3",
-    title: "Sustainable Energy Solutions Challenge",
-    organizingCollege: "IIT Bombay",
-    category: "Energy",
-    prizePool: "₹4,00,000",
-    registrationDeadline: "March 25, 2024",
-    eligibility: "Open to all UG and PG students from technical institutes. Focus on renewable energy solutions",
-    participants: 6700,
-    colleges: ["IIT-B", "IIT-M", "NIT-T", "BITS"],
-    isHot: false
+    title: "Branding the IMPOSSIBLE! – Naming and Tagging Competition",
+    competitionType: "Branding & Creativity Challenge",
+    organizingCollege: "Carrot Owl Education (OPC) Private Limited",
+    category: "Branding",
+    eligibility: "Engineering Students, MBA, Undergraduates, Postgraduates",
+    participants: 4800,
+    colleges: ["IIM", "ISB", "XLRI", "FMS"],
+    isHot: false,
+    applyUrl: "https://unstop.com/o/XwfLFri"
   },
   {
     id: "4",
-    title: "Digital Transformation Case Study",
-    organizingCollege: "IIM Bangalore",
-    category: "Technology",
-    prizePool: "₹2,50,000",
-    registrationDeadline: "March 30, 2024",
-    eligibility: "MBA/PGDM students and final year UG students from premier institutions across India",
-    participants: 15200,
-    colleges: ["IIT-KGP", "IIM-L", "BITS", "NIT-K"],
-    isHot: true
+    title: "Fluxathon: The Adaptive Leadership Challenge",
+    competitionType: "Leadership & Strategy Competition",
+    organizingCollege: "Indian Institute of Technology (IIT), Madras",
+    category: "Leadership",
+    eligibility: "Open to all",
+    participants: 7300,
+    colleges: ["IIT-M", "IIT-D", "IIT-B", "IIM"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/4KaiBDQ"
   },
   {
     id: "5",
-    title: "Healthcare Innovation Challenge",
-    organizingCollege: "BITS Pilani",
-    category: "Healthcare",
-    prizePool: "₹3,50,000",
-    registrationDeadline: "April 5, 2024",
-    eligibility: "Medical, engineering, and management students. Must have valid college ID from recognized institutions",
-    participants: 5400,
-    colleges: ["AIIMS", "CMC", "IIT-D", "IIM-A"],
-    isHot: false
-  },
-  {
-    id: "6",
-    title: "Smart City Planning Competition",
-    organizingCollege: "NIT Trichy",
-    category: "Urban Planning",
-    prizePool: "₹2,00,000", 
-    registrationDeadline: "April 10, 2024",
-    eligibility: "Architecture, civil engineering, and urban planning students from NITs, IITs, and other technical institutes",
-    participants: 7800,
-    colleges: ["IIT-R", "SPA", "NIT-S", "BIT"],
-    isHot: false
+    title: "Case Masters: Industry Solution Summit",
+    competitionType: "Industry-focused Case Study",
+    organizingCollege: "Indian Institute of Technology (IIT), Madras",
+    category: "Case Study",
+    eligibility: "Open to all",
+    participants: 5900,
+    colleges: ["IIT-M", "IIT-K", "NIT", "BITS"],
+    isHot: false,
+    applyUrl: "https://unstop.com/o/KQGjTsU"
   }
 ];
 
@@ -240,7 +228,7 @@ const Index = () => {
               onSearchChange={setSearchQuery}
             />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {filteredCompetitions.map((competition) => (
                 <CompetitionCard 
                   key={competition.id} 

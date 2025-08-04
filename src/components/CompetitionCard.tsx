@@ -6,14 +6,14 @@ import { Calendar, Trophy, Users, ExternalLink } from "lucide-react";
 interface Competition {
   id: string;
   title: string;
+  competitionType: string;
   organizingCollege: string;
   category: string;
-  prizePool: string;
-  registrationDeadline: string;
   eligibility: string;
   participants: number;
   colleges: string[];
   isHot: boolean;
+  applyUrl: string;
 }
 
 interface CompetitionCardProps {
@@ -39,43 +39,27 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
       </CardHeader>
 
       <CardContent className="space-y-5">
+        {/* Competition Type */}
+        <div className="space-y-2">
+          <p className="text-sm text-muted-foreground italic">
+            {competition.competitionType}
+          </p>
+        </div>
+
         {/* Organizing College */}
         <div className="space-y-2">
           <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">
-            Organizing College
+            🏫 Organizer
           </h4>
-          <p className="text-lg font-medium text-foreground">
+          <p className="text-base font-medium text-foreground">
             {competition.organizingCollege}
-          </p>
-        </div>
-
-        {/* Registration Deadline */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            Registration Deadline
-          </h4>
-          <p className="text-lg font-medium text-foreground">
-            {competition.registrationDeadline}
-          </p>
-        </div>
-
-        {/* Prize Pool */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
-            <Trophy className="w-4 h-4" />
-            Prize Pool
-          </h4>
-          <p className="text-lg font-medium text-foreground">
-            {competition.prizePool}
           </p>
         </div>
 
         {/* Eligibility */}
         <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide flex items-center gap-2">
-            <Users className="w-4 h-4" />
-            Eligibility
+          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">
+            🎓 Eligibility
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             {competition.eligibility}
@@ -90,14 +74,14 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3 pt-2">
-          <Button className="cta-primary flex-1" size="sm">
-            Register Now
-          </Button>
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
-            <ExternalLink className="w-4 h-4" />
-            Details
+        {/* Apply Now Button */}
+        <div className="pt-2">
+          <Button 
+            className="cta-primary w-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20" 
+            size="sm"
+            onClick={() => window.open(competition.applyUrl, '_blank')}
+          >
+            🔗 Apply Now
           </Button>
         </div>
       </CardContent>
