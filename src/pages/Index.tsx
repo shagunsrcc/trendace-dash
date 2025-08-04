@@ -66,6 +66,66 @@ const mockCompetitions = [
     colleges: ["IIT-M", "IIT-K", "NIT", "BITS"],
     isHot: false,
     applyUrl: "https://unstop.com/o/KQGjTsU"
+  },
+  {
+    id: "6",
+    title: "Chakravyuh 2.0",
+    competitionType: "Business Strategy Simulation",
+    organizingCollege: "Symbiosis Institute of Business Management (SIBM), Pune",
+    category: "Strategy",
+    eligibility: "Open to all",
+    participants: 7200,
+    colleges: ["SIBM", "IIM", "XIM", "FMS"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/nicbYXz"
+  },
+  {
+    id: "7",
+    title: "PactaNova MUN",
+    competitionType: "Model United Nations Competition",
+    organizingCollege: "Symbiosis Institute of Business Management (SIBM), Pune",
+    category: "MUN",
+    eligibility: "Open to all",
+    participants: 3800,
+    colleges: ["SIBM", "DU", "JNU", "IP"],
+    isHot: false,
+    applyUrl: "https://unstop.com/o/cP1whEk"
+  },
+  {
+    id: "8",
+    title: "Ecovate 2025",
+    competitionType: "Economic Innovation Challenge",
+    organizingCollege: "Symbiosis Institute of Business Management (SIBM), Pune",
+    category: "Economics",
+    eligibility: "Open to all",
+    participants: 5600,
+    colleges: ["SIBM", "ISI", "DSE", "JNU"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/lWD1ex2"
+  },
+  {
+    id: "9",
+    title: "Titanium Breakdown – RoboWars",
+    competitionType: "Robotics Combat Competition",
+    organizingCollege: "Indraprastha Institute of Information Technology (IIIT), Delhi",
+    category: "Robotics",
+    eligibility: "Open to all",
+    participants: 4200,
+    colleges: ["IIIT", "IIT", "NIT", "DTU"],
+    isHot: true,
+    applyUrl: "https://unstop.com/o/eWLZkz9"
+  },
+  {
+    id: "10",
+    title: "National Level Case Writing Competition",
+    competitionType: "Case Writing Competition",
+    organizingCollege: "Sri Balaji University, Pune, Maharashtra",
+    category: "Case Study",
+    eligibility: "Engineering Students, MBA, Undergraduates, Postgraduates",
+    participants: 2900,
+    colleges: ["SBU", "SPPU", "VIT", "MIT"],
+    isHot: false,
+    applyUrl: "https://unstop.com/o/KAEjPcS"
   }
 ];
 
