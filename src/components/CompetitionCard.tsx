@@ -33,30 +33,30 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-5">
+      <CardContent className="space-y-3">
         {/* Competition Type */}
-        <div className="space-y-2">
+        <div>
           <p className="text-sm text-muted-foreground italic">
             {competition.competitionType}
           </p>
         </div>
 
         {/* Organizing College */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">
+        <div>
+          <h4 className="text-xs font-semibold text-accent uppercase tracking-wide mb-1">
             🏫 Organizer
           </h4>
-          <p className="text-base font-medium text-foreground">
+          <p className="text-sm font-medium text-foreground">
             {competition.organizingCollege}
           </p>
         </div>
 
         {/* Eligibility */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">
+        <div>
+          <h4 className="text-xs font-semibold text-accent uppercase tracking-wide mb-1">
             🎓 Eligibility
           </h4>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground">
             {competition.eligibility}
           </p>
         </div>

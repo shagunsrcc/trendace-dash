@@ -180,57 +180,57 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-section relative py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 z-10 relative">
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+      <section className="hero-section relative py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6 z-10 relative">
+              <div className="space-y-3">
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
                   Trending <span className="text-glow">Competitions</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                   Top 20 trending case competitions across DU, IIMs, IITs, BITS, NITs, 
                   and premier institutions nationwide.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3">
                 <Button 
-                  className="cta-primary text-lg px-8 py-6"
+                  className="cta-primary px-6 py-3"
                   onClick={() => document.getElementById('live-competition-feed')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <TrendingUp className="w-5 h-5 mr-2" />
+                  <TrendingUp className="w-4 h-4 mr-2" />
                   Explore Competitions
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="text-lg px-8 py-6 glass-effect"
-                  onClick={() => window.open('https://wa.me/+919746960122?text=Hi!%20I%20want%20to%20get%20notifications%20about%20competitions', '_blank')}
+                  className="px-6 py-3 glass-effect"
+                  onClick={() => window.open('https://chat.whatsapp.com/DKOc0eDaSMP939ed84o36C', '_blank')}
                 >
-                  <Zap className="w-5 h-5 mr-2" />
+                  <Zap className="w-4 h-4 mr-2" />
                   Get Notifications
                 </Button>
               </div>
 
             </div>
 
-            <div className="space-y-8 relative">
+            <div className="space-y-6 relative">
               {/* Live Trending Competitions Widget */}
-              <div className="glass-effect rounded-2xl p-6 border border-border/20">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="glass-effect rounded-xl p-4 border border-border/20">
+                <div className="flex items-center gap-2 mb-3">
                   <div className="live-indicator">
-                    <TrendingUp className="w-5 h-5 text-accent" />
+                    <TrendingUp className="w-4 h-4 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold">Top Trending Now</h3>
+                  <h3 className="text-lg font-bold">Top Trending Now</h3>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {competitions.slice(0, 3).map((comp, index) => (
-                    <div key={comp.id} className="flex items-center gap-3 p-3 rounded-lg bg-card/50 border border-border/10">
-                      <div className="text-accent font-bold text-lg">#{index + 1}</div>
+                    <div key={comp.id} className="flex items-center gap-2 p-2 rounded-lg bg-card/50 border border-border/10">
+                      <div className="text-accent font-bold text-sm">#{index + 1}</div>
                       <div>
-                        <div className="font-medium text-sm">{comp.title.split(' ').slice(0, 3).join(' ')}</div>
-                        <div className="text-xs text-muted-foreground">{comp.organizingCollege}</div>
+                        <div className="font-medium text-xs">{comp.title.split(' ').slice(0, 3).join(' ')}</div>
+                        <div className="text-xs text-muted-foreground">{comp.organizingCollege.split(' ').slice(0, 2).join(' ')}</div>
                       </div>
                     </div>
                   ))}
@@ -244,12 +244,12 @@ const Index = () => {
 
 
       {/* Main Content */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="space-y-8">
+      <section className="py-8 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="space-y-6">
             <div className="flex items-center justify-between" id="live-competition-feed">
               <div>
-                <h2 className="text-3xl font-bold mb-2">Live Competition Feed</h2>
+                <h2 className="text-2xl font-bold mb-1">Live Competition Feed</h2>
               </div>
             </div>
 
@@ -260,10 +260,10 @@ const Index = () => {
               onSearchChange={setSearchQuery}
             />
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredCompetitions.map((competition) => (
                 <CompetitionCard 
-                  key={competition.id} 
+                  key={competition.id}
                   competition={competition}
                 />
               ))}
