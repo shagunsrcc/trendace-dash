@@ -202,7 +202,11 @@ const Index = () => {
                   <TrendingUp className="w-5 h-5 mr-2" />
                   Explore Competitions
                 </Button>
-                <Button variant="outline" className="text-lg px-8 py-6 glass-effect">
+                <Button 
+                  variant="outline" 
+                  className="text-lg px-8 py-6 glass-effect"
+                  onClick={() => window.open('https://chat.whatsapp.com/Hzh7Ab03DTi0Zei8R6VLZV', '_blank')}
+                >
                   <Zap className="w-5 h-5 mr-2" />
                   Get Notifications
                 </Button>
@@ -222,16 +226,11 @@ const Index = () => {
                 
                 <div className="space-y-3">
                   {competitions.slice(0, 3).map((comp, index) => (
-                    <div key={comp.id} className="flex items-center justify-between p-3 rounded-lg bg-card/50 border border-border/10">
-                      <div className="flex items-center gap-3">
-                        <div className="text-accent font-bold text-lg">#{index + 1}</div>
-                        <div>
-                          <div className="font-medium text-sm">{comp.title.split(' ').slice(0, 3).join(' ')}</div>
-                          <div className="text-xs text-muted-foreground">{comp.organizingCollege}</div>
-                        </div>
-                      </div>
-                      <div className="text-accent font-semibold text-sm">
-                        {(comp.participants / 1000).toFixed(1)}K
+                    <div key={comp.id} className="flex items-center gap-3 p-3 rounded-lg bg-card/50 border border-border/10">
+                      <div className="text-accent font-bold text-lg">#{index + 1}</div>
+                      <div>
+                        <div className="font-medium text-sm">{comp.title.split(' ').slice(0, 3).join(' ')}</div>
+                        <div className="text-xs text-muted-foreground">{comp.organizingCollege}</div>
                       </div>
                     </div>
                   ))}
