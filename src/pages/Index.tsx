@@ -190,7 +190,7 @@ const Index = () => {
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                   Top 20 trending case competitions across DU, IIMs, IITs, BITS, NITs, 
-                  and premier institutions nationwide. Updated in real-time.
+                  and premier institutions nationwide.
                 </p>
               </div>
 
@@ -205,7 +205,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   className="text-lg px-8 py-6 glass-effect"
-                  onClick={() => window.open('https://chat.whatsapp.com/Hzh7Ab03DTi0Zei8R6VLZV', '_blank')}
+                  onClick={() => window.open('https://wa.me/+919746960122?text=Hi!%20I%20want%20to%20get%20notifications%20about%20competitions', '_blank')}
                 >
                   <Zap className="w-5 h-5 mr-2" />
                   Get Notifications
