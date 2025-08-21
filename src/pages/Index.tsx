@@ -185,9 +185,6 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 z-10 relative">
               <div className="space-y-4">
-                <div className="live-indicator text-accent font-semibold">
-                  LIVE UPDATES
-                </div>
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                   Trending <span className="text-glow">Competitions</span>
                 </h1>
@@ -198,7 +195,10 @@ const Index = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button className="cta-primary text-lg px-8 py-6">
+                <Button 
+                  className="cta-primary text-lg px-8 py-6"
+                  onClick={() => document.getElementById('live-competition-feed')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   <TrendingUp className="w-5 h-5 mr-2" />
                   Explore Competitions
                 </Button>
@@ -243,42 +243,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-8 border-b border-border/20">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Globe className="w-4 h-4 text-accent" />
-              Last updated: {lastUpdated.toLocaleTimeString()}
-            </div>
-            <div className="flex items-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-accent" />
-                <span>{competitions.length} Active Competitions</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-accent" />
-                <span>{competitions.reduce((sum, comp) => sum + comp.participants, 0).toLocaleString()} Participants</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Main Content */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="space-y-8">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between" id="live-competition-feed">
               <div>
                 <h2 className="text-3xl font-bold mb-2">Live Competition Feed</h2>
-                <p className="text-muted-foreground">
-                  Real-time updates from top institutions across India
-                </p>
               </div>
-              <Badge className="live-indicator cta-accent">
-                LIVE
-              </Badge>
             </div>
 
             <FilterBar

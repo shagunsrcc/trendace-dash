@@ -30,11 +30,6 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
               {competition.title}
             </CardTitle>
           </div>
-          {competition.isHot && (
-            <Badge className="cta-accent text-xs font-semibold">
-              🔥 HOT
-            </Badge>
-          )}
         </div>
       </CardHeader>
 
@@ -66,13 +61,6 @@ export const CompetitionCard = ({ competition }: CompetitionCardProps) => {
           </p>
         </div>
 
-        {/* Participant Count */}
-        <div className="pt-2 border-t border-border/30">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Current Participants</span>
-            <span className="text-accent font-semibold">{competition.participants.toLocaleString()}</span>
-          </div>
-        </div>
 
         {/* Apply Now Button */}
         <div className="pt-2">
